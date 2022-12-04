@@ -1011,12 +1011,27 @@ let testStr = `2-4,6-8
 9-97,8-87
 75-92,51-92`
 // ans = [0,0,0,1,1,0,1,0,1,0,1]
+// 9
+
+// Part 1
 
 let ans = inputStr.split('\n').map(i => {
     // ab-cd ef-gh
     let bigPair = i.split(',')
     let aP = [[parseInt(bigPair[0].split('-')[0]) , parseInt(bigPair[0].split('-')[1])],[parseInt(bigPair[1].split('-')[0]) , parseInt(bigPair[1].split('-')[1])]]
     return (aP[0][0]-aP[1][0])*(aP[0][1]-aP[1][1]) <= 0 ? 1 : 0
+})
+
+console.log(ans.reduce((a,b)=>a+b,0))
+
+
+// Part 2
+
+ans = inputStr.split('\n').map(i => {
+    // ab-cd ef-gh
+    let bigPair = i.split(',')
+    let aP = [[parseInt(bigPair[0].split('-')[0]) , parseInt(bigPair[0].split('-')[1])],[parseInt(bigPair[1].split('-')[0]) , parseInt(bigPair[1].split('-')[1])]]
+    return Math.min(aP[0][1],aP[1][1])-Math.max(aP[0][0],aP[1][0]) >= 0 ? 1: 0;
 })
 
 console.log(ans.reduce((a,b)=>a+b,0))
