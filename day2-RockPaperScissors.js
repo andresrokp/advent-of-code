@@ -2518,3 +2518,19 @@ let pointsDict = {
 ans = inputStr.split('\n').map(i => pointsDict[i]).reduce((a,b)=>a+b,0)
 
 console.log(ans)
+
+let trickedDict = {
+    "A X":3+0,
+    "A Y":1+3,
+    "A Z":2+6,
+    "B X":1+0,
+    "B Y":2+3,
+    "B Z":3+6,
+    "C X":2+0,
+    "C Y":3+3,
+    "C Z":1+6,
+}
+
+ans = inputStr.split('\n').map(i => trickedDict[i]).reduce((a,b)=>a+b,0)
+
+console.log(ans)
