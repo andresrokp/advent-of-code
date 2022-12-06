@@ -18,3 +18,20 @@ for(let i = 0; i <= str.length - span; i++){
 
 console.log(ans, str.slice(ans-4,ans))
 //1287
+
+
+// PART 2
+
+str = str1;
+span = 14
+for(let i = 0; i <= str.length - span; i++){
+    let chunk = str.slice(i,i+span)
+    let reps = chunk.split('').map(c => chunk.indexOf(c) === chunk.lastIndexOf(c))
+    if (reps.reduce((a,b) => a && b)){
+        ans = i + span;
+        break;
+    }
+}
+
+console.log(ans, str.slice(ans-span,ans))
+// ans = 3716
